@@ -1,0 +1,9 @@
+#!/bin/sh
+# 执行eslint 样式 代码风格校验
+echo "正在检查代码样式..."
+pnpm lint:style:strict || exit 1
+
+echo "正在检查暂存区的代码..."
+npx lint-staged
+
+
