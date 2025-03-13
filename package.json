@@ -40,12 +40,15 @@
     "stylelint-order": "^6.0.4"
   },
   "lint-staged": {
-    "packages/**/*.{js,ts,vue}": [
+    "*.{js,ts,vue}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "packages/**/*.{css,less}": [
+    "*.{css,less}": [
       "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
       "prettier --write"
     ]
   }
