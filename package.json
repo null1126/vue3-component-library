@@ -8,8 +8,8 @@
     "lint": "eslint --ext .js,.ts,.vue \"packages/**/*\"",
     "lint:fix": "eslint --ext .js,.ts,.vue \"packages/**/*\" --fix",
     "prettier": "prettier --write \"**/*.{js,ts,vue}\"",
-    "lint:style": "stylelint \"**/*.{css,less,vue}\" --cache --fix",
-    "lint:style:strict": "stylelint \"**/*.{css,less,vue}\" --max-warnings 0",
+    "lint:style": "stylelint \"**/*.{css,less,vue}\" --cache --fix --allow-empty-input",
+    "lint:style:strict": "stylelint \"**/*.{css,less,vue}\" --max-warnings 0 --allow-empty-input",
     "prepare": "husky"
   },
   "keywords": [],
@@ -40,15 +40,15 @@
     "stylelint-order": "^6.0.4"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": [
+    "packages/**/*.{js,ts,vue}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{css,less}": [
+    "packages/**/*.{css,less}": [
       "stylelint --fix",
       "prettier --write"
     ],
-    "*.{json,md}": [
+    "*.{json,md,js,cjs}": [
       "prettier --write"
     ]
   }
