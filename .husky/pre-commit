@@ -7,6 +7,6 @@ echo "正在检查代码样式..."
 pnpm lint:style:strict || exit 1
 
 echo "正在检查提交信息..."
-npx --no -- commitlint --edit $1
-
-
+COMMIT_MSG=$(git log -1 --pretty=%B)
+echo "提交信息: $COMMIT_MSG"
+echo "$COMMIT_MSG" | npx --no -- commitlint
