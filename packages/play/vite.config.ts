@@ -7,7 +7,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, '../'),
-      '@x-ui': resolve(__dirname, '../')
+      '@x-ui': resolve(__dirname, '../components')
     }
+  },
+  optimizeDeps: {
+    include: ['vue']
+  },
+  server: {
+    port: 3000
   }
 })
