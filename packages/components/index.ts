@@ -3,6 +3,7 @@ import * as components from './components'
 
 export type { ButtonProps } from './button'
 export * from './components'
+export type { RadioProps } from './radio'
 
 function install(app: App) {
   for (const key in components) {
@@ -13,5 +14,4 @@ function install(app: App) {
 
 export default { install }
 
-export type { RadioProps } from './radio'
 export * from './types/components'
