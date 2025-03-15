@@ -1,6 +1,6 @@
 {
   "name": "@x-ui/components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue 3 component library with Button and Radio components",
   "type": "module",
   "main": "packages/components/dist/index.umd.js",
