@@ -13,5 +13,3 @@ function install(app: App) {
 }
 
 export default { install }
-
-export * from './types/components'
