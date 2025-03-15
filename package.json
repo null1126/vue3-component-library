@@ -3,17 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "packages/components/dist/index.umd.js",
+  "module": "packages/components/dist/index.es.js",
+  "types": "packages/components/dist/types/index.d.ts",
+  "files": [
+    "packages/components/dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "dev": "vite serve packages/play",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc && vite build packages/components",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js,.ts,.vue \"packages/**/*\"",
     "lint:fix": "eslint --ext .js,.ts,.vue \"packages/**/*\" --fix",
     "prettier": "prettier --write \"**/*.{js,ts,vue}\"",
     "lint:style": "stylelint \"**/*.{css,less,vue}\" --cache --fix --allow-empty-input",
     "lint:style:strict": "stylelint \"packages/!(dist)/**/*.{css,less,vue}\" --max-warnings 0 --allow-empty-input",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release:patch": "npm version patch && npm run build && npm publish",
+    "release:minor": "npm version minor && npm run build && npm publish",
+    "release:major": "npm version major && npm run build && npm publish",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",
