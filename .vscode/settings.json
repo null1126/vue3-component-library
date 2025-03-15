@@ -1,7 +1,12 @@
 {
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": "explicit"
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
-  "stylelint.validate": ["css", "less", "postcss", "vue"],
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "less", "vue"],
+  "css.validate": false,
+  "less.validate": false,
   "commentTranslate.targetLanguage": "zh-CN"
 }

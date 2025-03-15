@@ -126,8 +126,8 @@ defineComponent({
 <style lang="less" scoped>
 .container {
   max-width: 1200px;
-  padding: 20px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .demo-section {
@@ -141,11 +141,11 @@ defineComponent({
 }
 
 .demo-block {
-  padding: 20px;
   margin-bottom: 20px;
-  background-color: #fff;
+  padding: 20px;
   border: 1px solid #ebeef5;
   border-radius: 4px;
+  background-color: #fff;
 
   .x-button {
     margin-right: 10px;

@@ -1,49 +1,90 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-recess-order",
-    "stylelint-config-html/vue"
+    "stylelint-config-html/vue",
+    "stylelint-config-recess-order"
   ],
+  "plugins": ["stylelint-less", "stylelint-order"],
+  "customSyntax": "postcss-html",
+  "rules": {
+    "declaration-block-single-line-max-declarations": null,
+    "property-no-vendor-prefix": null,
+    "selector-pseudo-element-colon-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-empty-source": null,
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "declaration-property-value-no-unknown": null,
+    "order/properties-order": [
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "z-index",
+      "display",
+      "flex",
+      "flex-direction",
+      "flex-wrap",
+      "justify-content",
+      "align-items",
+      "align-content",
+      "order",
+      "float",
+      "clear",
+      "box-sizing",
+      "width",
+      "min-width",
+      "max-width",
+      "height",
+      "min-height",
+      "max-height",
+      "margin",
+      "margin-top",
+      "margin-right",
+      "margin-bottom",
+      "margin-left",
+      "padding",
+      "padding-top",
+      "padding-right",
+      "padding-bottom",
+      "padding-left",
+      "border",
+      "border-style",
+      "border-width",
+      "border-color",
+      "border-top",
+      "border-right",
+      "border-bottom",
+      "border-left",
+      "border-radius",
+      "background",
+      "background-color",
+      "background-image",
+      "background-position",
+      "background-repeat",
+      "background-size",
+      "color",
+      "font",
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "text-align",
+      "text-decoration",
+      "text-transform",
+      "white-space",
+      "vertical-align",
+      "opacity",
+      "transform",
+      "transition"
+    ]
+  },
   "overrides": [
     {
       "files": ["**/*.less"],
       "customSyntax": "postcss-less"
-    },
-    {
-      "files": ["**/*.vue"],
-      "customSyntax": "postcss-html"
     }
   ],
-  "rules": {
-    "selector-class-pattern": null,
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [
-          "tailwind",
-          "apply",
-          "layer",
-          "mixin",
-          "include",
-          "extend"
-        ]
-      }
-    ],
-    "function-no-unknown": [
-      true,
-      {
-        "ignoreFunctions": ["theme", "darken", "mix"]
-      }
-    ],
-    "no-descending-specificity": null,
-    "alpha-value-notation": "number",
-    "color-function-notation": "legacy",
-    "declaration-block-no-redundant-longhand-properties": [
-      true,
-      {
-        "ignoreShorthands": ["/flex/"]
-      }
-    ],
-    "declaration-property-value-no-unknown": null
-  }
+  "ignoreFiles": ["dist/**/*", "node_modules/**/*"]
 }

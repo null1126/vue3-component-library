@@ -19,7 +19,9 @@ export default antfu(
       'prettier/prettier': 'off',
       'vue/singleline-html-element-content-newline': 'off',
       'ts/no-empty-object-type': 'off',
-      'style/comma-dangle': ['error', 'always-multiline']
+      'style/comma-dangle': 'off',
+      'comma-dangle': 'off',
+      '@typescript-eslint/comma-dangle': 'off'
     }
   }
 )
