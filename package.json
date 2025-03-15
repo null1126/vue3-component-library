@@ -1,6 +1,6 @@
 {
   "name": "@xiaozhang8399/vue3-component-library",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Vue 3 component library with Button and Radio components",
   "type": "module",
   "main": "packages/components/dist/index.umd.js",
