@@ -1,0 +1,155 @@
+@import url('./variables.less');
+
+.x-radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 30px;
+  font-size: @radio-font-size;
+  font-weight: 500;
+  color: @radio-font-color;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-right: @radio-input-margin-right;
+    white-space: nowrap;
+    outline: none;
+
+    .x-radio__inner {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      width: @radio-input-size;
+      height: @radio-input-size;
+      background-color: #fff;
+      border: @radio-input-border-width solid @radio-input-border-color;
+      border-radius: @radio-input-border-radius;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+        content: '';
+        background-color: #fff;
+        border-radius: @radio-input-border-radius;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.15s ease-in;
+      }
+    }
+
+    .x-radio__original {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      margin: 0;
+      outline: none;
+      opacity: 0;
+    }
+  }
+
+  &__label {
+    padding-left: 4px;
+    font-size: @radio-font-size;
+  }
+
+  &.is-checked {
+    .x-radio__input {
+      .x-radio__inner {
+        background-color: @radio-checked-input-bg-color;
+        border-color: @radio-checked-input-border-color;
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+
+    .x-radio__label {
+      color: @radio-checked-text-color;
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+
+    .x-radio__input {
+      .x-radio__inner {
+        background-color: @radio-disabled-input-bg-color;
+        border-color: @radio-disabled-input-border-color;
+
+        &::after {
+          background-color: @radio-disabled-icon-color;
+        }
+      }
+    }
+
+    .x-radio__label {
+      color: @radio-disabled-icon-color;
+    }
+
+    &.is-checked {
+      .x-radio__input {
+        .x-radio__inner {
+          background-color: @radio-disabled-input-bg-color;
+          border-color: @radio-disabled-input-border-color;
+        }
+      }
+    }
+  }
+
+  // 尺寸
+  &--large {
+    font-size: 16px;
+
+    .x-radio__input {
+      .x-radio__inner {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &--small {
+    font-size: 12px;
+
+    .x-radio__input {
+      .x-radio__inner {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  // 带边框
+  &.is-bordered {
+    box-sizing: border-box;
+    padding: 8px 15px;
+    border: 1px solid @radio-input-border-color;
+    border-radius: 4px;
+
+    &.is-checked {
+      border-color: @radio-checked-input-border-color;
+    }
+
+    &.is-disabled {
+      border-color: @radio-disabled-input-border-color;
+    }
+
+    &.x-radio--large {
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    &.x-radio--small {
+      padding: 6px 12px;
+      border-radius: 3px;
+    }
+  }
+}

@@ -1,0 +1,207 @@
+@import url('./variables.less');
+
+.x-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: @button-padding-medium;
+  font-size: @font-size-medium;
+  font-weight: 500;
+  line-height: 1;
+  vertical-align: middle;
+  color: #606266;
+  text-align: center;
+  white-space: nowrap;
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  background-color: #fff;
+  border: 1px solid @border-color-base;
+  border-radius: @border-radius-base;
+  transition: 0.1s;
+
+  &:hover,
+  &:focus {
+    color: @primary-color;
+    background-color: mix(#fff, @primary-color, 90%);
+    border-color: mix(#fff, @primary-color, 70%);
+  }
+
+  &:active {
+    color: darken(@primary-color, 10%);
+    outline: none;
+    border-color: darken(@primary-color, 10%);
+  }
+
+  // 类型
+  &--primary {
+    color: #fff;
+    background-color: @primary-color;
+    border-color: @primary-color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: mix(#fff, @primary-color, 20%);
+      border-color: mix(#fff, @primary-color, 20%);
+    }
+
+    &:active {
+      color: #fff;
+      background: darken(@primary-color, 10%);
+      border-color: darken(@primary-color, 10%);
+    }
+  }
+
+  &--success {
+    color: #fff;
+    background-color: @success-color;
+    border-color: @success-color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: mix(#fff, @success-color, 20%);
+      border-color: mix(#fff, @success-color, 20%);
+    }
+
+    &:active {
+      color: #fff;
+      background: darken(@success-color, 10%);
+      border-color: darken(@success-color, 10%);
+    }
+  }
+
+  &--warning {
+    color: #fff;
+    background-color: @warning-color;
+    border-color: @warning-color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: mix(#fff, @warning-color, 20%);
+      border-color: mix(#fff, @warning-color, 20%);
+    }
+
+    &:active {
+      color: #fff;
+      background: darken(@warning-color, 10%);
+      border-color: darken(@warning-color, 10%);
+    }
+  }
+
+  &--danger {
+    color: #fff;
+    background-color: @danger-color;
+    border-color: @danger-color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: mix(#fff, @danger-color, 20%);
+      border-color: mix(#fff, @danger-color, 20%);
+    }
+
+    &:active {
+      color: #fff;
+      background: darken(@danger-color, 10%);
+      border-color: darken(@danger-color, 10%);
+    }
+  }
+
+  &--info {
+    color: #fff;
+    background-color: @info-color;
+    border-color: @info-color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: mix(#fff, @info-color, 20%);
+      border-color: mix(#fff, @info-color, 20%);
+    }
+
+    &:active {
+      color: #fff;
+      background: darken(@info-color, 10%);
+      border-color: darken(@info-color, 10%);
+    }
+  }
+
+  // 尺寸
+  &--large {
+    padding: @button-padding-large;
+    font-size: @font-size-large;
+  }
+
+  &--small {
+    padding: @button-padding-small;
+    font-size: @font-size-small;
+  }
+
+  // 禁用状态
+  &.is-disabled {
+    color: @disabled-text-color;
+    cursor: not-allowed;
+    background-color: @disabled-bg-color;
+    border-color: @disabled-border-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @disabled-text-color;
+      background-color: @disabled-bg-color;
+      border-color: @disabled-border-color;
+    }
+  }
+
+  // 朴素按钮
+  &.is-plain {
+    &:hover,
+    &:focus {
+      color: @primary-color;
+      background: #fff;
+      border-color: @primary-color;
+    }
+
+    &:active {
+      color: darken(@primary-color, 10%);
+      outline: none;
+      background: #fff;
+      border-color: darken(@primary-color, 10%);
+    }
+  }
+
+  // 圆角按钮
+  &.is-round {
+    border-radius: 20px;
+  }
+
+  // 加载中状态
+  &.is-loading {
+    position: relative;
+    pointer-events: none;
+
+    &::before {
+      position: absolute;
+      inset: -1px;
+      pointer-events: none;
+      content: '';
+      background-color: rgba(255, 255, 255, 0.35);
+      border-radius: inherit;
+    }
+  }
+
+  // 图标
+  &__icon {
+    margin-right: 5px;
+  }
+
+  &__loading {
+    margin-right: 5px;
+  }
+}

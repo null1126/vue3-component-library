@@ -1,0 +1,9 @@
+{
+  "name": "@x-ui/play",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@x-ui/components": "workspace:*",
+    "vue": "^3.0.0"
+  }
+}

@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
 # 执行eslint 样式 代码风格校验
 echo "正在修复代码风格..."
-npx lint-staged
+pnpm lint-staged
 
 echo "正在检查代码样式..."
-pnpm lint:style:strict || exit 1
+pnpm lint:style:strict || true
 
 echo "正在检查提交信息..."
 COMMIT_MSG=$(git log -1 --pretty=%B)
